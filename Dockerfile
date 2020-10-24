@@ -25,9 +25,12 @@ RUN apt-get install -y \
   libasound2 \
   libdbus-glib-1-2
 
+# Install playwright
+RUN pip3 install playwright==0.151.0
+RUN python3 -m playwright install
+
 # Install Python dependencies
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
-RUN python3 -m playwright install
 
 ENTRYPOINT ["python3", "main.py"]
