@@ -26,7 +26,7 @@ RUN apt-get install -y \
   libdbus-glib-1-2
 
 # Install playwright
-RUN pip3 install playwright==0.151.0
+RUN pip3 install playwright==1.9.2
 RUN python3 -m playwright install
 
 # Install Python dependencies
